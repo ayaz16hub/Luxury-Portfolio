@@ -10,44 +10,58 @@ export default function Footer() {
 
         <div className="grid gap-12 lg:grid-cols-5">
 
+          {/* Logo */}
+
           <FooterLogo />
+
+          {/* Quick Links */}
 
           <FooterLinks
             title="Quick Links"
             links={[
-              "Home",
-              "About",
-              "Projects",
-              "Experience",
-              "Contact",
+              { name: "Home", href: "#home" },
+              { name: "About", href: "#about" },
+            
+              { name: "Projects", href: "#projects" },
+              { name: "Journey", href: "#experience" },
+              
+              { name: "Contact", href: "#contact" },
             ]}
           />
+
+          {/* Services */}
 
           <FooterLinks
             title="Services"
             links={[
-              "Web Development",
-              "Flutter Apps",
-              "UI/UX Design",
-              "AI Projects",
-              "Backend APIs",
+              { name: "Web Development" },
+              { name: "Flutter Apps" },
+              { name: "UI/UX Design" },
+              { name: "AI Projects" },
+              { name: "Backend APIs" },
             ]}
           />
+
+          {/* Technologies */}
 
           <FooterLinks
             title="Technologies"
             links={[
-              "Next.js",
-              "Flutter",
-              "React",
-              "Firebase",
-              "Node.js",
+              { name: "Next.js" },
+              { name: "Flutter" },
+              { name: "React" },
+              { name: "Firebase" },
+              { name: "Node.js" },
             ]}
           />
+
+          {/* Contact */}
 
           <FooterContact />
 
         </div>
+
+        {/* Social */}
 
         <FooterSocial />
 

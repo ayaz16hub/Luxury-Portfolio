@@ -1,24 +1,30 @@
+import { ReactNode } from "react";
+
 type Props = {
-  children: React.ReactNode;
+  id?: string;
   className?: string;
+  children: ReactNode;
 };
 
 export default function GlassSection({
-  children,
+  id,
   className = "",
+  children,
 }: Props) {
   return (
     <section
+      id={id}
       className={`
         relative
-        overflow-hidden
-        rounded-[36px]
+        mx-auto
+        max-w-7xl
+        rounded-[40px]
         border
         border-white/10
-        bg-white/[0.03]
+        bg-white/5
         backdrop-blur-xl
-        shadow-[0_0_40px_rgba(255,0,0,.08)]
-        p-10
+        px-6
+        py-20
         ${className}
       `}
     >

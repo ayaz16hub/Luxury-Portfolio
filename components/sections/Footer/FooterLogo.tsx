@@ -30,9 +30,7 @@ export default function FooterLogo() {
 
         <div>
 
-          <h2 className="text-red-500 font-bold">
-            M Ayaz
-          </h2>
+          
 
           <p className="tex-green 400">
             Software Engineer

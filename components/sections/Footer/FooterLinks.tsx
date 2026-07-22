@@ -1,6 +1,11 @@
+type LinkItem = {
+  name: string;
+  href?: string;
+};
+
 type Props = {
   title: string;
-  links: string[];
+  links: LinkItem[];
 };
 
 export default function FooterLinks({
@@ -9,29 +14,37 @@ export default function FooterLinks({
 }: Props) {
   return (
     <div>
-
-      <h3 className="mb-5 text-xl font-bold">
+      <h3 className="mb-6 text-xl font-bold">
         {title}
       </h3>
 
-      <div className="space-y-3">
+      <ul className="space-y-3">
 
-        {links.map((link) => (
-          <p
-            key={link}
-            className="
-            cursor-pointer
-            text-gray-400
-            transition
-            hover:text-red-400
-          "
-          >
-            {link}
-          </p>
+        {links.map((item) => (
+          <li key={item.name}>
+
+            {item.href ? (
+              <a
+                href={item.href}
+                className="
+                  text-gray-400
+                  transition
+                  duration-300
+                  hover:text-red-500
+                "
+              >
+                {item.name}
+              </a>
+            ) : (
+              <span className="text-gray-400">
+                {item.name}
+              </span>
+            )}
+
+          </li>
         ))}
 
-      </div>
-
+      </ul>
     </div>
   );
 }

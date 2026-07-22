@@ -30,7 +30,7 @@ export default function HeroRight() {
       {/* Hero Image */}
       <div className="relative z-20">
         <Image
-          src="/images/ayazimg.png"
+          src="/images/ayaz7.png"
           alt="Muhammad Ayaz"
           width={670}
           height={800}
