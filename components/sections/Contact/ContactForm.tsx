@@ -1,8 +1,59 @@
 "use client";
 
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
 export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    from_name: "",
+    from_email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const sendEmail = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formData,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
+      alert("✅ Message sent successfully!");
+
+      setFormData({
+        from_name: "",
+        from_email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      alert("❌ Failed to send message.");
+    }
+
+    setLoading(false);
+  };
+
   return (
     <form
+      onSubmit={sendEmail}
       className="
       rounded-3xl
       border
@@ -22,6 +73,10 @@ export default function ContactForm() {
 
         <input
           type="text"
+          name="from_name"
+          value={formData.from_name}
+          onChange={handleChange}
+          required
           placeholder="Muhammad Ayaz"
           className="
           w-full
@@ -50,6 +105,10 @@ export default function ContactForm() {
 
         <input
           type="email"
+          name="from_email"
+          value={formData.from_email}
+          onChange={handleChange}
+          required
           placeholder="your@email.com"
           className="
           w-full
@@ -78,6 +137,10 @@ export default function ContactForm() {
 
         <input
           type="text"
+          name="subject"
+          value={formData.subject}
+          onChange={handleChange}
+          required
           placeholder="Project Discussion"
           className="
           w-full
@@ -106,6 +169,10 @@ export default function ContactForm() {
 
         <textarea
           rows={6}
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          required
           placeholder="Write your message..."
           className="
           w-full
@@ -130,11 +197,11 @@ export default function ContactForm() {
 
       <button
         type="submit"
+        disabled={loading}
         className="
         w-full
         rounded-2xl
         bg-green-500
-       
         py-4
         text-lg
         font-semibold
@@ -142,10 +209,11 @@ export default function ContactForm() {
         transition-all
         duration-300
         hover:scale-[1.02]
-        hover:shadow-[0_0_35px_rgba(239,68,68,.35)]
+        hover:shadow-[0_0_35px_rgba(16,185,129,.35)]
+        disabled:opacity-60
       "
       >
-        Send Message 🚀
+        {loading ? "Sending..." : "Send Message 🚀"}
       </button>
     </form>
   );
