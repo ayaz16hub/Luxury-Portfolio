@@ -13,7 +13,12 @@ export default function Experience() {
           My <span className="text-red-500">Journey</span>
         </h2>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid
+grid-cols-1
+xl:grid-cols-2
+gap-10
+items-start
+">
           <Timeline />
           <Stats />
         </div>

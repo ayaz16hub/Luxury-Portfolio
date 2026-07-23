@@ -7,8 +7,8 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden bg-[#050505]"
-    >
+       className="mt-14 grid grid-cols-3 gap-6 text-center sm:flex sm:flex-wrap sm:justify-start sm:text-left">
+    
       <BackgroundEffects />
 
       {/* Red Glow */}

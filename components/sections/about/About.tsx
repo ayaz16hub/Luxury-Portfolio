@@ -11,15 +11,7 @@ export default function About() {
       
       
       <div
-        className="
-          mx-auto
-          max-w-7xl
-          rounded-[32px]
-          border border-white/10
-          bg-white/[0.03]
-          backdrop-blur-xl
-          p-8
-        "
+       className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center overflow-hidden"
       >
         <div className="grid gap-10 lg:grid-cols-2">
 

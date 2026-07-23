@@ -13,6 +13,14 @@ export default function AboutContent() {
       border border-white/10
       bg-[#111111]
       p-10
+      mx-auto
+max-w-7xl
+rounded-[32px]
+border border-white/10
+bg-white/[0.03]
+backdrop-blur-xl
+p-8
+overflow-hidden
     "
     >
       <p className="text-red-500 font-semibold uppercase tracking-widest">

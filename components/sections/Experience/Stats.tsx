@@ -30,7 +30,12 @@ export default function Stats() {
       </h2>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid
+grid-cols-2
+lg:grid-cols-2
+gap-6
+"
+>
         {stats.map((item) => (
           <div
             key={item.title}
@@ -65,7 +70,7 @@ export default function Stats() {
           border-white/10
           bg-[#111111]
           p-8
-          overflow-x-auto
+          overflow-x-auto pb-2
         "
       >
         <h3 className="mb-8 text-2xl font-bold">
