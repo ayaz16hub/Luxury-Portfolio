@@ -81,41 +81,39 @@ export default function HeroLeft() {
       {/* Buttons */}
       <div className="mt-10 flex flex-wrap gap-4">
 
-        <button
-          className="
-          rounded-2xl
-          bg-red-500
-         
-          px-7
-          py-4
-          font-semibold
-          text-white
-          transition-all
-          duration-300
-          hover:scale-105
-          hover:shadow-[0_0_35px_rgba(239,68,68,.45)]
-        "
-        >
-          View Projects 🚀
-        </button>
+       <a
+  href="#projects"
+  className="
+    rounded-full
+    border
+    border-white/20
+    px-8
+    py-4
+    font-semibold
+    transition
+    hover:border-red-500
+    hover:text-red-500
+  "
+>
+    View Projects
+</a>
 
-        <button
-          className="
-          rounded-2xl
-          border
-          border-emerald-500/40
-          px-7
-          py-4
-          font-semibold
-          text-white
-          transition-all
-          duration-300
-          hover:scale-105
-          hover:bg-emerald-500/10
-        "
-        >
-          Download CV
-        </button>
+        <a
+  href="/cv/Muhammad_Ayaz_CV.pdf"
+  download
+  className="
+    rounded-full
+    bg-red-500
+    px-8
+    py-4
+    font-semibold
+    text-white
+    transition
+    hover:scale-105
+  "
+>
+    Download CV
+</a>
 
       </div>
 
